@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class DriverSingleton {
 
-    private static WebDriver driver;
+    private  WebDriver driver;
 
     private static ThreadLocal<DriverSingleton> instance = new ThreadLocal<>();
 
@@ -29,7 +29,7 @@ public class DriverSingleton {
         return driver;
     }
 
-    public static void closeDriver() {
+    public  void closeDriver() {
         try {
             driver.quit();
             driver = null;
