@@ -16,4 +16,8 @@ public class LoginPageService {
         return new InventoryPageService();
     }
 
+    public String getErrorTextLogin() {
+        return loginPage.getErrorTextLogin();
+    }
+
 }

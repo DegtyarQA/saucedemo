@@ -14,6 +14,9 @@ public class LoginPage extends Page {
     @FindBy (xpath = "//input[@id='login-button']")
     private WebElement loginButton;
 
+    @FindBy (xpath = "//h3[@data-test='error']")
+    private WebElement errorButton;
+
     public  LoginPage openPage(String url) {
         driver.get(url);
         return this;
@@ -31,6 +34,10 @@ public class LoginPage extends Page {
 
     public void clickButton() {
         loginButton.click();
+    }
+
+    public String getErrorTextLogin () {
+        return errorButton.getText();
     }
 
 }

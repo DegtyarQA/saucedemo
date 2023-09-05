@@ -25,4 +25,13 @@ public class LoginPageTest extends BaseTest{
         String expectedTextOfMainPageSection = "Products";
         Assert.assertEquals(actualTextOfMainPageSection, expectedTextOfMainPageSection, "Error!!!)");
     }
+
+    @Test
+    public void checkFailedLoginTest(){
+        User userFailed = new User("Abcd","Qwer");
+        InventoryPageService inventoryPageService = loginPageService.login(userFailed);
+        String actualTextLoginError = loginPageService.getErrorTextLogin();
+        String expectedTextLoginError = "Epic sadface: Username and password do not match any user in this service";
+        Assert.assertEquals(actualTextLoginError, expectedTextLoginError, "Error!!!)");
+    }
 }
